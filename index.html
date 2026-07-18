@@ -35,9 +35,7 @@
             --texto: #24323d;
             --branco: #ffffff;
             --borda: #e4e8eb;
-            --sombra-suave: 0 10px 30px rgba(0,0,0,.08);
             --sombra-card: 0 15px 35px rgba(0,0,0,.06);
-            --radius: 12px;
             --transicao: .30s ease;
         }
 
@@ -77,17 +75,14 @@
         .cabecalho { background: #fff; padding: 30px 0; }
         .cabecalho .container { display: flex; align-items: center; gap: 40px; }
         .logo-area { display: flex; align-items: center; }
-        
-        /* Ajuste do tamanho do Logo pela Altura para não quebrar */
         .logo-area img { height: 85px; width: auto; object-fit: contain; }
-        
         .cabecalho-conteudo { flex: 1; }
         .cabecalho-conteudo h1 { margin-bottom: 4px; }
         .cabecalho-conteudo .subtitle { margin-bottom: 12px; font-weight: 700; font-size: 1.2rem; color: var(--texto); }
         .cabecalho-conteudo .description { font-size: 1rem; color: var(--cinza-texto); margin-bottom: 0; max-width: 85%; }
 
         /* ===========================
-           MENU PRINCIPAL (Estilo Abas da Imagem)
+           MENU PRINCIPAL (Estilo Abas)
         =========================== */
         .menu-principal { background: #ffffff; border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
         .menu-principal ul { display: flex; list-style: none; margin: 0; padding: 0; width: 100%; }
@@ -138,6 +133,17 @@
         .links-footer-direita { display: flex; align-items: center; gap: 25px; font-weight: 500; }
         .links-footer-direita a { display: flex; align-items: center; gap: 8px; }
         .rodape-inferior { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; display: flex; justify-content: space-between; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+        @media(max-width: 768px) {
+            .menu-principal ul { flex-direction: column; }
+            .menu-principal li { border-right: none; border-bottom: 1px solid var(--borda); }
+            .menu-principal a.ativo::after { height: 0; }
+            .menu-principal a.ativo { border-left: 4px solid var(--verde); background: #fafafa; }
+            .cabecalho .container { flex-direction: column; text-align: center; gap: 20px; }
+            .cabecalho-conteudo .description { max-width: 100%; }
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-imagem { min-height: 250px; }
+        }
     </style>
 </head>
 
@@ -173,16 +179,16 @@
         </div>
     </header>
 
-    <!-- Navegação -->
+    <!-- Navegação Global Conectada -->
     <nav class="menu-principal">
         <div class="container">
             <ul>
-                <li><a class="ativo" href="#"><i class="bi bi-house-door-fill"></i> Início</a></li>
+                <li><a class="ativo" href="index.html"><i class="bi bi-house-door-fill"></i> Início</a></li>
                 <li><a href="#"><i class="bi bi-building"></i> Como funciona o Campus</a></li>
                 <li><a href="#"><i class="bi bi-question-circle"></i> Perguntas Frequentes</a></li>
-                <li><a href="#"><i class="bi bi-bar-chart-line"></i> Panorama Orçamentário</a></li>
-                <li><a href="#"><i class="bi bi-clipboard-check"></i> Planejamento de Aquisições</a></li>
-                <li><a href="#"><i class="bi bi-chat-dots"></i> Fale com a Gestão</a></li>
+                <li><a href="panorama-orcamentario.html"><i class="bi bi-bar-chart-line"></i> Panorama Orçamentário</a></li>
+                <li><a href="planejamento-aquisicoes.html"><i class="bi bi-clipboard-check"></i> Planejamento de Aquisições</a></li>
+                <li><a href="fale-com-a-gestao.html"><i class="bi bi-chat-dots"></i> Fale com a Gestão</a></li>
             </ul>
         </div>
     </nav>
@@ -202,19 +208,20 @@
                         Este portal reúne informações institucionais, orientações sobre os principais serviços do campus,
                         dados de transparência e um canal permanente de diálogo entre a comunidade acadêmica e a Gestão.
                     </p>
-                    <a href="#" class="botao-principal">
-                        <i class="bi bi-arrow-right"></i> Acesse os principais serviços
+                    <!-- Link interno que rola para a seção de serviços abaixo -->
+                    <a href="#servicos" class="botao-principal">
+                        <i class="bi bi-arrow-down"></i> Acesse os principais serviços
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Acesso Rápido -->
-    <section class="secao-servicos">
+    <!-- Seção de Acesso Rápido com Links Reais -->
+    <section id="servicos" class="secao-servicos">
         <div class="container">
             <div class="cards-grid">
-                <!-- Card 1 -->
+                <!-- Card 1 (Ainda sem arquivo criado no repositório) -->
                 <article class="card-servico">
                     <div class="icone-card-container"><i class="bi bi-building"></i></div>
                     <h3>Como funciona o Campus</h3>
@@ -222,7 +229,7 @@
                     <a href="#" class="card-link">Acessar <i class="bi bi-arrow-right"></i></a>
                 </article>
 
-                <!-- Card 2 -->
+                <!-- Card 2 (Ainda sem arquivo criado no repositório) -->
                 <article class="card-servico">
                     <div class="icone-card-container"><i class="bi bi-question-circle"></i></div>
                     <h3>Perguntas Frequentes</h3>
@@ -230,20 +237,20 @@
                     <a href="#" class="card-link">Acessar <i class="bi bi-arrow-right"></i></a>
                 </article>
 
-                <!-- Card 3 -->
+                <!-- Card 3 (Conectado ao Panorama Orçamentário) -->
                 <article class="card-servico">
                     <div class="icone-card-container"><i class="bi bi-bar-chart-line"></i></div>
                     <h3>Panorama Orçamentário</h3>
                     <p>Acompanhe a execução orçamentária, investimentos e a aplicação dos recursos públicos do campus.</p>
-                    <a href="#" class="card-link">Acessar <i class="bi bi-arrow-right"></i></a>
+                    <a href="panorama-orcamentario.html" class="card-link">Acessar <i class="bi bi-arrow-right"></i></a>
                 </article>
 
-                <!-- Card 4 -->
+                <!-- Card 4 (Conectado ao Planejamento de Aquisições) -->
                 <article class="card-servico">
                     <div class="icone-card-container"><i class="bi bi-clipboard-check"></i></div>
                     <h3>Planejamento de Aquisições</h3>
                     <p>Consulte os planejamentos de compras, investimentos e contratações previstos para o campus.</p>
-                    <a href="#" class="card-link">Acessar <i class="bi bi-arrow-right"></i></a>
+                    <a href="planejamento-aquisicoes.html" class="card-link">Acessar <i class="bi bi-arrow-right"></i></a>
                 </article>
             </div>
         </div>

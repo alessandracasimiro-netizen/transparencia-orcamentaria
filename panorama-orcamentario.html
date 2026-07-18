@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparência Orçamentária | IFSP Campus Bragança Paulista</title>
+    <meta name="description"
+        content="Portal de Gestão, Transparência e Informações do Instituto Federal de São Paulo - Campus Bragança Paulista.">
+    <link rel="icon" href="img/logo-ifsp.png">
+
+    <!-- Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ===========================
+           VARIÁVEIS DE IDENTIDADE
+        =========================== */
+        :root {
+            --verde: #0b6b3a;
+            --verde-escuro: #07552d;
+            --verde-claro: #138548;
+            --preto-footer: #002d1a;
+            --cinza: #f5f7f8;
+            --cinza-claro: #fafafa;
+            --cinza-texto: #5f6368;
+            --texto: #24323d;
+            --branco: #ffffff;
+            --borda: #e4e8eb;
+            --sombra-card: 0 15px 35px rgba(0,0,0,.06);
+            --transicao: .30s ease;
+        }
+
+        /* ===========================
+           RESET E ESTRUTURA
+        =========================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--cinza); color: var(--texto); line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; transition: var(--transicao); }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 1360px; margin: auto; padding-left: 28px; padding-right: 28px; }
+        
+        /* Layout de duas colunas (Conteúdo + Âncoras Laterais) */
+        .conteudo-grid { display: grid; grid-template-columns: 1fr 300px; gap: 40px; padding: 50px 0 80px; }
+
+        /* ===========================
+           TÍTULOS E TEXTOS
+        =========================== */
+        h1, h2, h3 { color: var(--preto-footer); font-weight: 700; line-height: 1.2; }
+        h1 { font-size: 2.3rem; color: var(--verde-escuro); letter-spacing: -0.5px; }
+        h2 { font-size: 1.8rem; margin-bottom: 20px; color: var(--verde-escuro); position: relative; padding-bottom: 10px; }
+        h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: var(--verde); }
+        h3 { font-size: 1.20rem; }
+        p { color: var(--cinza-texto); font-size: 1.02rem; }
+
+        /* ===========================
+           BARRA SUPERIOR (Institucional)
+        =========================== */
+        .barra-institucional { background: var(--verde-escuro); color: white; font-size: 0.85rem; padding: 12px 0; }
+        .barra-institucional .container { display: flex; justify-content: space-between; align-items: center; }
+        .barra-links-direita { display: flex; align-items: center; gap: 15px; }
+        .barra-links-direita span { border-right: 1px solid rgba(255,255,255,0.3); padding-right: 15px; }
+        .barra-links-direita a { color: white; opacity: 0.8; font-size: 0.95rem; font-weight: 600; }
+        .barra-links-direita a:hover { opacity: 1; }
+
+        /* ===========================
+           CABEÇALHO (Header)
+        =========================== */
+        .cabecalho { background: #fff; padding: 30px 0; }
+        .cabecalho .container { display: flex; align-items: center; gap: 40px; }
+        .logo-area { display: flex; align-items: center; }
+        .logo-area img { height: 85px; width: auto; object-fit: contain; }
+        .cabecalho-conteudo { flex: 1; }
+        .cabecalho-conteudo h1 { margin-bottom: 4px; }
+        .cabecalho-conteudo .subtitle { margin-bottom: 12px; font-weight: 700; font-size: 1.2rem; color: var(--texto); }
+        .cabecalho-conteudo .description { font-size: 1rem; color: var(--cinza-texto); margin-bottom: 0; max-width: 85%; }
+
+        /* ===========================
+           MENU PRINCIPAL (Panorama Ativo)
+        =========================== */
+        .menu-principal { background: #ffffff; border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+        .menu-principal ul { display: flex; list-style: none; margin: 0; padding: 0; width: 100%; }
+        .menu-principal li { flex: 1; text-align: center; border-right: 1px solid var(--borda); }
+        .menu-principal li:last-child { border-right: none; }
+        .menu-principal a { color: var(--texto); font-weight: 500; font-size: 0.92rem; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 18px 10px; position: relative; height: 100%; }
+        .menu-principal a:hover, .menu-principal a.ativo { color: var(--verde); font-weight: 600; }
+        .menu-principal a.ativo::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 100%; height: 4px; background: var(--verde); }
+
+        /* ===========================
+           SEÇÕES DE CONTEÚDO
+        =========================== */
+        .bloco-conteudo { background: var(--branco); border-radius: 12px; padding: 40px; box-shadow: var(--sombra-card); margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.02); }
+        
+        /* Bloco de Objetivo com Destaque Lateral Verde */
+        .objetivo-box { border-left: 5px solid var(--verde); background: #fafd967c; background-color: rgba(11, 107, 58, 0.04); }
+        .objetivo-box h3 { color: var(--verde-escuro); margin-bottom: 12px; font-weight: 700; }
+
+        /* Grid de Cards Financeiros */
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 35px 0; }
+        .card-financeiro { background: var(--branco); border: 1px solid var(--borda); border-radius: 10px; padding: 25px 20px; transition: var(--transicao); }
+        .card-financeiro:hover { transform: translateY(-2px); box-shadow: var(--sombra-card); }
+        .card-financeiro h3 { font-size: 1rem; color: var(--cinza-texto); font-weight: 600; margin-bottom: 15px; }
+        .card-financeiro .valor { font-size: 1.8rem; font-weight: 700; color: var(--preto-footer); margin-bottom: 8px; }
+        .card-financeiro .descricao-pequena { font-size: 0.88rem; color: var(--cinza-texto); line-height: 1.4; }
+        
+        /* Card Destaque (Amarelo/Alerta) */
+        .card-financeiro.destaque { background: #fffdf2; border-left: 4px solid #dca100; border-color: #dca100 var(--borda) var(--borda) var(--borda); }
+        .card-financeiro.destaque h3 { color: #856404; }
+        .card-financeiro.destaque .valor { color: #b28900; }
+
+        /* Barra de Progresso Personalizada */
+        .barra-execucao-container { background: #e9ecef; height: 32px; border-radius: 50px; overflow: hidden; margin: 20px 0; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); }
+        .barra-execucao-preenchimento { width: 72%; height: 100%; background: linear-gradient(90deg, var(--verde), var(--verde-claro)); color: #fff; text-align: center; line-height: 32px; font-weight: 700; font-size: 1rem; box-shadow: 0 2px 4px rgba(11,107,58,0.2); }
+
+        /* Tabelas Personalizadas */
+        .tabela-customizada { width: 100%; margin-top: 15px; }
+        .tabela-customizada th { background-color: #edf7ed; color: var(--verde-escuro); font-weight: 700; border-bottom: 2px solid #c3e6cb; padding: 14px 18px; }
+        .tabela-customizada td { padding: 14px 18px; border-bottom: 1px solid var(--borda); color: var(--texto); font-size: 0.98rem; }
+        .tabela-customizada tr:hover td { background-color: #fafd9633; background-color: rgba(11, 107, 58, 0.01); }
+
+        /* ===========================
+           MENU LATERAL (Âncoras Firas)
+        =========================== */
+        .menu-lateral-container { position: sticky; top: 30px; height: fit-content; }
+        .menu-lateral { background: var(--branco); border-radius: 12px; padding: 25px; box-shadow: var(--sombra-card); border: 1px solid rgba(0,0,0,0.02); }
+        .menu-lateral h4 { font-size: 1rem; font-weight: 700; color: var(--preto-footer); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--borda); }
+        .menu-lateral ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+        .menu-lateral a { display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-radius: 6px; color: var(--cinza-texto); font-weight: 500; font-size: 0.95rem; }
+        .menu-lateral a:hover { background: #edf7ed; color: var(--verde); font-weight: 600; }
+
+        /* ===========================
+           RODAPÉ (Footer)
+        =========================== */
+        .rodape { background: var(--verde-escuro); color: white; padding: 45px 0 25px; font-size: 0.95rem; margin-top: 40px; }
+        .rodape a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .rodape a:hover { color: white; text-decoration: underline; }
+        .rodape h4 { color: white; font-weight: 700; font-size: 1.15rem; margin-bottom: 5px; }
+        .rodape .subtitulo-footer { color: rgba(255,255,255,0.7); margin-bottom: 15px; font-size: 0.9rem; }
+        .rodape-superior { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; margin-bottom: 35px; }
+        .links-footer-direita { display: flex; align-items: center; gap: 25px; font-weight: 500; }
+        .links-footer-direita a { display: flex; align-items: center; gap: 8px; }
+        .rodape-inferior { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; display: flex; justify-content: space-between; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+        /* Responsive Layout */
+        @media(max-width: 992px) {
+            .conteudo-grid { grid-template-columns: 1fr; padding-top: 30px; }
+            .menu-lateral-container { display: none; } /* Oculta menu lateral em telas pequenas já que temos o menu principal */
+        }
+        @media(max-width: 768px) {
+            .menu-principal ul { flex-direction: column; }
+            .menu-principal li { border-right: none; border-bottom: 1px solid var(--borda); }
+            .menu-principal a.ativo::after { height: 0; }
+            .menu-principal a.ativo { border-left: 4px solid var(--verde); background: #fafafa; }
+            .cabecalho .container { flex-direction: column; text-align: center; gap: 20px; }
+            .cabecalho-conteudo .description { max-width: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra institucional -->
+    <div class="barra-institucional">
+        <div class="container">
+            <span>Portal de Gestão, Transparência e Informações</span>
+            <div class="barra-links-direita">
+                <span>IFSP · Campus Bragança Paulista</span>
+                <a href="#">A-</a>
+                <a href="#">A</a>
+                <a href="#">A+</a>
+                <a href="#" title="Ajuda"><i class="bi bi-info-circle"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo-area">
+                <img src="img/logo-ifsp.png" alt="IFSP Logo">
+            </div>
+            <div class="cabecalho-conteudo">
+                <h1>Gestão, Transparência e Informações</h1>
+                <p class="subtitle">Campus Bragança Paulista</p>
+                <p class="description">
+                    Facilitando o acesso à informação, promovendo a transparência e fortalecendo o diálogo com a comunidade.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegação Global -->
+    <nav class="menu-principal">
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="bi bi-house-door"></i> Início</a></li>
+                <li><a href="#"><i class="bi bi-building"></i> Como funciona o Campus</a></li>
+                <li><a href="#"><i class="bi bi-question-circle"></i> Perguntas Frequentes</a></li>
+                <li><a class="ativo" href="panorama-orcamentario.html"><i class="bi bi-bar-chart-line-fill"></i> Panorama Orçamentário</a></li>
+                <li><a href="planejamento-aquisicoes.html"><i class="bi bi-clipboard-check"></i> Planejamento de Aquisições</a></li>
+                <li><a href="fale-com-a-gestao.html"><i class="bi bi-chat-dots"></i> Fale com a Gestão</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Estrutura Principal da Página -->
+    <main class="container">
+        <div class="conteudo-grid">
+            
+            <!-- Coluna da Esquerda: Conteúdo Técnico -->
+            <div class="coluna-conteudo">
+                
+                <!-- Bloco de Objetivo -->
+                <div class="bloco-conteudo objetivo-box">
+                    <h3>Objetivo</h3>
+                    <p class="m-0">
+                        Esta página apresenta informações consolidadas sobre o orçamento e sua execução no IFSP Campus Bragança Paulista, buscando ampliar a transparência da gestão dos recursos públicos, demonstrar como os recursos institucionais são planejados e aplicados ao longo do exercício financeiro e facilitar a compreensão da comunidade acadêmica.
+                    </p>
+                </div>
+
+                <!-- Seção Resumo (Indicadores Financeiros) -->
+                <section id="resumo" class="pt-2">
+                    <div class="dashboard-grid">
+                        <div class="card-financeiro">
+                            <h3>Orçamento do Exercício</h3>
+                            <div class="valor">R$ 3.030.000</div>
+                            <div class="descricao-pequena">Total de recursos autorizados para utilização no exercício financeiro.</div>
+                        </div>
+
+                        <div class="card-financeiro">
+                            <h3>Recursos Empenhados</h3>
+                            <div class="valor">R$ 2.180.000</div>
+                            <div class="descricao-pequena"><span class="badge bg-success">72%</span> do orçamento já comprometido com despesas autorizadas.</div>
+                        </div>
+
+                        <div class="card-financeiro destaque">
+                            <h3>Recursos Previstos para Empenho</h3>
+                            <div class="valor">R$ 850.000</div>
+                            <div class="descricao-pequena">Valores destinados às despesas planejadas para o decorrer do exercício e que ainda não foram objeto de empenho.</div>
+                        </div>
+
+                        <div class="card-financeiro">
+                            <h3>Última Atualização</h3>
+                            <div class="valor" style="font-size: 1.5rem; padding-top: 5px; margin-bottom: 13px;">Julho / 2026</div>
+                            <div class="descricao-pequena">Dados consolidados da transparência ativa do campus.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção Execução Orçamentária -->
+                <section id="execucao" class="bloco-conteudo">
+                    <h2>Execução Orçamentária</h2>
+                    <div class="barra-execucao-container">
+                        <div class="barra-execucao-preenchimento">72%</div>
+                    </div>
+                    <p class="descricao-pequena text-muted mt-2 mb-4">
+                        O percentual de execução corresponde ao montante já empenhado em relação ao orçamento autorizado para o exercício.
+                    </p>
+                    
+                    <h3 class="h5 font-weight-bold text-dark mt-4 mb-2">Como interpretar a execução orçamentária?</h3>
+                    <p class="mb-3">
+                        O principal indicador da execução orçamentária do campus é o <strong>valor empenhado</strong>, pois representa os recursos já comprometidos para atender às despesas autorizadas.
+                    </p>
+                    <p class="mb-3">
+                        Os <strong>Recursos previstos para empenho</strong> <strong>não representam recursos excedentes ou livres</strong>. Eles poderão ser utilizados ao longo do exercício para atender processos licitatórios, contratos continuados, aquisições previstas no Plano Anual de Contratações, investimentos, manutenções e demais necessidades institucionais.
+                    </p>
+                    <p class="m-0">
+                        A execução do orçamento ocorre de forma gradual, conforme o planejamento institucional e a disponibilidade orçamentária.
+                    </p>
+                </section>
+
+                <!-- Seção Aplicação dos Recursos -->
+                <section id="aplicacao" class="bloco-conteudo">
+                    <h2>Aplicação dos Recursos</h2>
+                    <p class="text-muted mb-3">Principais áreas de investimento e destinação de valores do campus:</p>
+                    
+                    <table class="table tabela-customizada align-middle">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%;">Área</th>
+                                <th>Exemplo Prático de Aplicação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Infraestrutura</strong></td>
+                                <td>Substituição da caixa d'água</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contratos continuados</strong></td>
+                                <td>Limpeza, vigilância, energia, internet e manutenção predial</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tecnologia</strong></td>
+                                <td>Aquisição de computadores e equipamentos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ensino</strong></td>
+                                <td>Laboratórios e apoio às atividades acadêmicas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Assistência Estudantil</strong></td>
+                                <td>Auxílios e ações de permanência e êxito</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Seção Conceitos -->
+                <section id="conceitos" class="bloco-conteudo">
+                    <h2>Entenda os principais conceitos</h2>
+                    <p class="text-muted mb-3">Dicionário simples para ajudar na compreensão dos termos orçamentários públicos:</p>
+                    
+                    <table class="table tabela-customizada align-middle">
+                        <thead>
+                            <tr>
+                                <th style="width: 35%;">Conceito</th>
+                                <th>Significado Técnico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Orçamento do exercício</strong></td>
+                                <td>Total de recursos autorizados para utilização durante o exercício financeiro.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Empenho</strong></td>
+                                <td>Reserva de parte do orçamento para atender uma despesa previamente autorizada.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Recursos previstos para empenho</strong></td>
+                                <td>Valores ainda não empenhados, mas destinados às despesas planejadas para o decorrer do exercício.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Execução orçamentária</strong></td>
+                                <td>Percentual do orçamento comprometido por meio de empenhos.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Bloco de Compromisso Final -->
+                <div class="bloco-conteudo bg-light">
+                    <h3 class="h5 text-dark mb-2"><i class="bi bi-shield-check text-success me-2"></i>Compromisso com a Transparência</h3>
+                    <p class="mb-2" style="font-size: 0.95rem;">
+                        O IFSP Campus Bragança Paulista busca promover a transparência na gestão dos recursos públicos, disponibilizando informações de forma clara, objetiva e acessível, em conformidade com os princípios da Administração Pública.
+                    </p>
+                    <p class="text-muted m-0" style="font-size: 0.88rem; font-style: italic;">
+                        As informações desta página possuem caráter informativo e são apresentadas de forma consolidada. Elas não substituem os registros constantes dos sistemas oficiais da Administração Pública Federal.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Coluna da Direita: Menu de Navegação Rápida Interna (Âncoras) -->
+            <div class="coluna-menu-lateral">
+                <div class="menu-lateral-container">
+                    <aside class="menu-lateral">
+                        <h4>Neste Conteúdo</h4>
+                        <ul>
+                            <li><a href="#resumo"><i class="bi bi-grid-1x2"></i> Resumo Geral</a></li>
+                            <li><a href="#execucao"><i class="bi bi-bar-chart-steps"></i> Execução</a></li>
+                            <li><a href="#aplicacao"><i class="bi bi-wallet2"></i> Aplicação de Recursos</a></li>
+                            <li><a href="#conceitos"><i class="bi bi-book"></i> Glossário de Conceitos</a></li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Rodapé (Footer) -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-superior">
+                <div>
+                    <h4>Gestão, Transparência e Informações</h4>
+                    <p class="subtitulo-footer">IFSP – Campus Bragança Paulista</p>
+                    <p class="m-0">Promovendo transparência, participação e diálogo.</p>
+                </div>
+                <div class="links-footer-direita">
+                    <a href="mailto:contato@exemplo.com"><i class="bi bi-envelope"></i> Contato</a>
+                    <a href="#"><i class="bi bi-map"></i> Mapa do site</a>
+                </div>
+            </div>
+            <div class="rodape-inferior">
+                <span>&copy; 2026 IFSP – Campus Bragança Paulista</span>
+                <span>Última atualização: Julho de 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

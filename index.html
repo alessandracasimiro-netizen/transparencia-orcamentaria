@@ -4,12 +4,12 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Gestão, Transparência e Informações | IFSP - Campus Bragança Paulista</title>
 
     <meta name="description"
-        content="Portal de Gestão, Transparência e Informações do Instituto Federal de São Paulo - Campus Bragança Paulista.">
+        content="Portal de Gestão, Transparência e Informações do IFSP - Campus Bragança Paulista.">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -19,42 +19,61 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <!-- CSS do Portal -->
+    <!-- CSS -->
     <link rel="stylesheet"
         href="css/estilo.css">
-
-    <link rel="icon"
-        href="img/favicon.ico">
 
 </head>
 
 <body>
 
     <!-- ==========================================================
+         BARRA SUPERIOR
+    =========================================================== -->
+
+    <div class="barra-superior">
+
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <span>
+
+                    Portal de Gestão, Transparência e Informações
+
+                </span>
+
+                <span>
+
+                    IFSP • Campus Bragança Paulista
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================================
          CABEÇALHO
     =========================================================== -->
 
-    <header class="topo-site">
+    <header class="cabecalho">
 
         <div class="container">
 
             <div class="row align-items-center">
 
-                <div class="col-lg-2 col-md-3 text-center">
+                <div class="col-lg-3 text-center text-lg-start">
 
                     <img src="img/logo-ifsp.png"
                         class="logo-ifsp"
-                        alt="IFSP">
+                        alt="Instituto Federal de São Paulo">
 
                 </div>
 
-                <div class="col-lg-10 col-md-9">
-
-                    <p class="instituicao">
-
-                        Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
-
-                    </p>
+                <div class="col-lg-9">
 
                     <h1>
 
@@ -68,7 +87,7 @@
 
                     </h2>
 
-                    <p class="slogan">
+                    <p>
 
                         Facilitando o acesso à informação, promovendo a transparência
                         e fortalecendo o diálogo com a comunidade.
@@ -91,20 +110,10 @@
 
         <div class="container">
 
-            <a class="navbar-brand d-lg-none"
-                href="index.html">
-
-                Portal
-
-            </a>
-
             <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#menuPortal"
-                aria-controls="menuPortal"
-                aria-expanded="false"
-                aria-label="Abrir menu">
+                data-bs-target="#menuPortal">
 
                 <span class="navbar-toggler-icon"></span>
 
@@ -113,7 +122,7 @@
             <div class="collapse navbar-collapse"
                 id="menuPortal">
 
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav mx-auto">
 
                     <li class="nav-item">
 
@@ -133,7 +142,7 @@
                         <a class="nav-link"
                             href="como-funciona-o-campus.html">
 
-                            <i class="bi bi-journal-text"></i>
+                            <i class="bi bi-building"></i>
 
                             Como Funciona o Campus
 
@@ -146,7 +155,7 @@
                         <a class="nav-link"
                             href="perguntas-frequentes.html">
 
-                            <i class="bi bi-patch-question"></i>
+                            <i class="bi bi-question-circle"></i>
 
                             Perguntas Frequentes
 
@@ -159,7 +168,7 @@
                         <a class="nav-link"
                             href="panorama-orcamentario.html">
 
-                            <i class="bi bi-bar-chart-line"></i>
+                            <i class="bi bi-bar-chart"></i>
 
                             Panorama Orçamentário
 
@@ -201,23 +210,24 @@
 
     </nav>
 
-    <!-- ==========================================================
-         CONTEÚDO PRINCIPAL
-    =========================================================== -->
-
     <main>
+                <!-- ==========================================================
+             BANNER PRINCIPAL
+        =========================================================== -->
 
-        <!-- ======================================================
-             BANNER
-        ======================================================= -->
-
-        <section class="banner">
+        <section class="hero">
 
             <div class="container">
 
                 <div class="row align-items-center">
 
-                    <div class="col-lg-7">
+                    <div class="col-lg-5 hero-texto">
+
+                        <span class="hero-destaque">
+
+                            Portal Institucional
+
+                        </span>
 
                         <h2>
 
@@ -236,18 +246,31 @@
 
                         <p>
 
-                            Nosso objetivo é facilitar o acesso às informações,
-                            fortalecer a transparência institucional e contribuir
-                            para uma comunicação cada vez mais clara com estudantes,
-                            servidores e comunidade externa.
+                            Aqui você encontrará informações organizadas para
+                            facilitar o acesso aos serviços, compreender o
+                            funcionamento do campus e acompanhar as ações da gestão.
 
                         </p>
 
+                        <a href="como-funciona-o-campus.html"
+                            class="btn btn-ifsp">
+
+                            <i class="bi bi-arrow-right-circle-fill"></i>
+
+                            Acesse os principais serviços
+
+                        </a>
+
                     </div>
 
-                    <div class="col-lg-5 text-center">
+                    <div class="col-lg-7">
 
-                        <i class="bi bi-building display-1"></i>
+                        <div class="hero-imagem">
+
+                            <img src="img/campus-banner.jpg"
+                                alt="IFSP Campus Bragança Paulista">
+
+                        </div>
 
                     </div>
 
@@ -256,44 +279,250 @@
             </div>
 
         </section>
-                <!-- ======================================================
-             COMO PODEMOS AJUDAR?
-        ======================================================= -->
 
-        <section class="secao">
+        <!-- ==========================================================
+             ACESSOS RÁPIDOS
+        =========================================================== -->
+
+        <section class="servicos">
 
             <div class="container">
 
-                <div class="row justify-content-center">
+                <div class="text-center mb-5">
 
-                    <div class="col-lg-10">
+                    <h2>
 
-                        <div class="caixa-introducao">
+                        Acesse os principais serviços e informações
 
-                            <h2>
+                    </h2>
 
-                                <i class="bi bi-signpost-2"></i>
+                    <p>
 
-                                Como podemos ajudar?
+                        Escolha uma das opções abaixo para navegar pelo portal.
 
-                            </h2>
+                    </p>
+
+                </div>
+
+                <div class="row g-4">
+                                    <!-- Como Funciona -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card card-servico h-100">
+
+                        <div class="card-body">
+
+                            <div class="icone">
+
+                                <i class="bi bi-building"></i>
+
+                            </div>
+
+                            <h3>
+
+                                Como Funciona o Campus
+
+                            </h3>
 
                             <p>
 
-                                Utilize este portal para encontrar informações sobre os
-                                principais serviços do campus, esclarecer dúvidas,
-                                acompanhar informações de transparência e, quando
-                                necessário, entrar em contato com a Gestão.
+                                Conheça os principais serviços do campus,
+                                os setores responsáveis, documentos,
+                                procedimentos e formas de atendimento.
 
                             </p>
+
+                        </div>
+
+                        <div class="card-footer">
+
+                            <a href="como-funciona-o-campus.html"
+                                class="btn btn-outline-success">
+
+                                Acessar
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Perguntas Frequentes -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card card-servico h-100">
+
+                        <div class="card-body">
+
+                            <div class="icone">
+
+                                <i class="bi bi-question-circle"></i>
+
+                            </div>
+
+                            <h3>
+
+                                Perguntas Frequentes
+
+                            </h3>
 
                             <p>
 
-                                Antes de encaminhar uma manifestação, consulte as
-                                informações disponíveis. Em muitos casos você encontrará
-                                aqui a resposta ou a orientação necessária.
+                                Encontre respostas para as dúvidas mais
+                                comuns sobre a vida acadêmica, os serviços
+                                e o funcionamento do campus.
 
                             </p>
+
+                        </div>
+
+                        <div class="card-footer">
+
+                            <a href="perguntas-frequentes.html"
+                                class="btn btn-outline-success">
+
+                                Acessar
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Panorama -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card card-servico h-100">
+
+                        <div class="card-body">
+
+                            <div class="icone">
+
+                                <i class="bi bi-bar-chart-line"></i>
+
+                            </div>
+
+                            <h3>
+
+                                Panorama Orçamentário
+
+                            </h3>
+
+                            <p>
+
+                                Acompanhe a execução orçamentária,
+                                investimentos e aplicação dos recursos
+                                públicos do campus.
+
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer">
+
+                            <a href="panorama-orcamentario.html"
+                                class="btn btn-outline-success">
+
+                                Acessar
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Planejamento -->
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="card card-servico h-100">
+
+                        <div class="card-body">
+
+                            <div class="icone">
+
+                                <i class="bi bi-clipboard-check"></i>
+
+                            </div>
+
+                            <h3>
+
+                                Planejamento de Aquisições
+
+                            </h3>
+
+                            <p>
+
+                                Consulte os planejamentos de compras,
+                                investimentos e contratações previstos
+                                para o campus.
+
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer">
+
+                            <a href="planejamento-aquisicoes.html"
+                                class="btn btn-outline-success">
+
+                                Acessar
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Fale com a Gestão -->
+
+                <div class="col-lg-6 col-md-12">
+
+                    <div class="card card-servico h-100 card-destaque">
+
+                        <div class="card-body">
+
+                            <div class="icone">
+
+                                <i class="bi bi-chat-dots"></i>
+
+                            </div>
+
+                            <h3>
+
+                                Fale com a Gestão
+
+                            </h3>
+
+                            <p>
+
+                                Encaminhe sugestões, dúvidas, elogios
+                                e oportunidades de melhoria diretamente
+                                à Gestão do Campus.
+
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer">
+
+                            <a href="fale-com-a-gestao.html"
+                                class="btn btn-success">
+
+                                Acessar
+
+                            </a>
 
                         </div>
 
@@ -304,411 +533,9 @@
             </div>
 
         </section>
-
-        <!-- ======================================================
-             FLUXOGRAMA
-        ======================================================= -->
-
-        <section class="secao secao-fluxo">
-
-            <div class="container">
-
-                <h2 class="titulo-secao">
-
-                    Como encontrar a informação ou atendimento que você procura
-
-                </h2>
-
-                <div class="fluxograma">
-
-                    <div class="caixa-fluxo">
-
-                        <i class="bi bi-question-circle"></i>
-
-                        <h3>
-
-                            Tenho uma dúvida,
-                            solicitação ou preciso
-                            de uma informação
-
-                        </h3>
-
-                    </div>
-
-                    <div class="seta">
-
-                        <i class="bi bi-arrow-down"></i>
-
-                    </div>
-
-                    <div class="caixa-fluxo">
-
-                        <i class="bi bi-search"></i>
-
-                        <h3>
-
-                            Consulte as informações
-                            disponíveis no Portal
-
-                        </h3>
-
-                        <ul>
-
-                            <li>Como Funciona o Campus</li>
-
-                            <li>Perguntas Frequentes</li>
-
-                            <li>Panorama Orçamentário</li>
-
-                            <li>Planejamento de Aquisições</li>
-
-                        </ul>
-
-                    </div>
-
-                    <div class="seta">
-
-                        <i class="bi bi-arrow-down"></i>
-
-                    </div>
-
-                    <div class="caixa-fluxo">
-
-                        <i class="bi bi-check2-circle"></i>
-
-                        <h3>
-
-                            Sua necessidade
-                            foi atendida?
-
-                        </h3>
-
-                    </div>
-
-                    <div class="opcoes-fluxo">
-
-                        <div class="opcao sucesso">
-
-                            <i class="bi bi-check-circle-fill"></i>
-
-                            <strong>SIM</strong>
-
-                            <p>
-
-                                Ótimo! Esperamos ter ajudado.
-
-                            </p>
-
-                        </div>
-
-                        <div class="opcao seta-lateral">
-
-                            <i class="bi bi-arrow-right"></i>
-
-                        </div>
-
-                        <div class="opcao destaque">
-
-                            <i class="bi bi-chat-dots"></i>
-
-                            <strong>NÃO</strong>
-
-                            <p>
-
-                                Utilize o canal
-
-                                <strong>Fale com a Gestão</strong>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-                <!-- ======================================================
-             CARDS
-        ======================================================= -->
-
-        <section class="secao">
-
-            <div class="container">
-
-                <!-- Informações e Atendimento -->
-
-                <div class="mb-5">
-
-                    <h2 class="titulo-secao">
-
-                        <i class="bi bi-info-circle"></i>
-
-                        Informações e Atendimento
-
-                    </h2>
-
-                    <div class="row g-4">
-
-                        <div class="col-lg-6">
-
-                            <div class="card card-portal h-100">
-
-                                <div class="card-body">
-
-                                    <div class="icone-card">
-
-                                        <i class="bi bi-journal-text"></i>
-
-                                    </div>
-
-                                    <h3>
-
-                                        Como Funciona o Campus
-
-                                    </h3>
-
-                                    <p>
-
-                                        Encontre os principais serviços do campus,
-                                        saiba qual setor é responsável, como solicitar,
-                                        documentos necessários, prazos e canais de atendimento.
-
-                                    </p>
-
-                                </div>
-
-                                <div class="card-footer bg-white border-0">
-
-                                    <a href="como-funciona-o-campus.html"
-                                        class="btn btn-success">
-
-                                        Acessar
-
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-6">
-
-                            <div class="card card-portal h-100">
-
-                                <div class="card-body">
-
-                                    <div class="icone-card">
-
-                                        <i class="bi bi-patch-question"></i>
-
-                                    </div>
-
-                                    <h3>
-
-                                        Perguntas Frequentes
-
-                                    </h3>
-
-                                    <p>
-
-                                        Consulte respostas para as dúvidas mais comuns
-                                        sobre a vida acadêmica, os serviços e o
-                                        funcionamento do campus.
-
-                                    </p>
-
-                                </div>
-
-                                <div class="card-footer bg-white border-0">
-
-                                    <a href="perguntas-frequentes.html"
-                                        class="btn btn-success">
-
-                                        Acessar
-
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Gestão e Transparência -->
-
-                <div class="mb-5">
-
-                    <h2 class="titulo-secao">
-
-                        <i class="bi bi-bar-chart"></i>
-
-                        Gestão e Transparência
-
-                    </h2>
-
-                    <div class="row g-4">
-
-                        <div class="col-lg-6">
-
-                            <div class="card card-portal h-100">
-
-                                <div class="card-body">
-
-                                    <div class="icone-card">
-
-                                        <i class="bi bi-bar-chart-line"></i>
-
-                                    </div>
-
-                                    <h3>
-
-                                        Panorama Orçamentário
-
-                                    </h3>
-
-                                    <p>
-
-                                        Acompanhe a execução orçamentária do campus
-                                        e conheça como os recursos públicos são
-                                        aplicados.
-
-                                    </p>
-
-                                </div>
-
-                                <div class="card-footer bg-white border-0">
-
-                                    <a href="panorama-orcamentario.html"
-                                        class="btn btn-success">
-
-                                        Acessar
-
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-6">
-
-                            <div class="card card-portal h-100">
-
-                                <div class="card-body">
-
-                                    <div class="icone-card">
-
-                                        <i class="bi bi-clipboard-check"></i>
-
-                                    </div>
-
-                                    <h3>
-
-                                        Planejamento de Aquisições
-
-                                    </h3>
-
-                                    <p>
-
-                                        Consulte o planejamento das aquisições,
-                                        investimentos e contratações previstos
-                                        para o campus.
-
-                                    </p>
-
-                                </div>
-
-                                <div class="card-footer bg-white border-0">
-
-                                    <a href="planejamento-aquisicoes.html"
-                                        class="btn btn-success">
-
-                                        Acessar
-
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Participação -->
-
-                <div>
-
-                    <h2 class="titulo-secao">
-
-                        <i class="bi bi-people"></i>
-
-                        Participação
-
-                    </h2>
-
-                    <div class="row justify-content-center">
-
-                        <div class="col-lg-8">
-
-                            <div class="card card-portal destaque-gestao">
-
-                                <div class="card-body text-center">
-
-                                    <div class="icone-card">
-
-                                        <i class="bi bi-chat-dots"></i>
-
-                                    </div>
-
-                                    <h3>
-
-                                        Fale com a Gestão
-
-                                    </h3>
-
-                                    <p>
-
-                                        Canal destinado ao diálogo entre a comunidade
-                                        e a Gestão do Campus para envio de sugestões,
-                                        elogios, dúvidas e oportunidades de melhoria.
-
-                                    </p>
-
-                                    <a href="fale-com-a-gestao.html"
-                                        class="btn btn-success btn-lg mt-3">
-
-                                        Acessar
-
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-                <!-- ======================================================
+                <!-- ==========================================================
              RODAPÉ
-        ======================================================= -->
+        =========================================================== -->
 
     </main>
 
@@ -718,141 +545,33 @@
 
             <div class="row">
 
-                <div class="col-lg-4 mb-4">
+                <div class="col-lg-8">
 
-                    <h4>
+                    <h5>
 
-                        IFSP – Campus Bragança Paulista
+                        Gestão, Transparência e Informações
 
-                    </h4>
-
-                    <p>
-
-                        Portal de Gestão, Transparência e Informações.
-
-                    </p>
-
-                    <p>
-
-                        Um espaço criado para facilitar o acesso às informações,
-                        promover a transparência e fortalecer o diálogo com a
-                        comunidade acadêmica.
-
-                    </p>
-
-                </div>
-
-                <div class="col-lg-4 mb-4">
-
-                    <h4>
-
-                        Acesso rápido
-
-                    </h4>
-
-                    <ul class="lista-rodape">
-
-                        <li>
-
-                            <a href="como-funciona-o-campus.html">
-
-                                Como Funciona o Campus
-
-                            </a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="perguntas-frequentes.html">
-
-                                Perguntas Frequentes
-
-                            </a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="panorama-orcamentario.html">
-
-                                Panorama Orçamentário
-
-                            </a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="planejamento-aquisicoes.html">
-
-                                Planejamento de Aquisições
-
-                            </a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="fale-com-a-gestao.html">
-
-                                Fale com a Gestão
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
-                <div class="col-lg-4 mb-4">
-
-                    <h4>
-
-                        Contato
-
-                    </h4>
+                    </h5>
 
                     <p>
 
                         Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
-
-                    </p>
-
-                    <p>
-
+                        <br>
                         Campus Bragança Paulista
-
-                    </p>
-
-                    <p>
-
-                        Av. Major Fernando Valle, 2013<br>
-                        Bragança Paulista – SP
-
-                    </p>
-
-                    <p>
-
-                        🌐 www.bra.ifsp.edu.br
 
                     </p>
 
                 </div>
 
-            </div>
+                <div class="col-lg-4 text-lg-end">
 
-            <hr>
+                    <p class="mb-0">
 
-            <div class="text-center">
+                        © 2026 IFSP – Campus Bragança Paulista
 
-                <small>
+                    </p>
 
-                    © 2026 IFSP – Campus Bragança Paulista.
-                    Todos os direitos reservados.
-
-                </small>
+                </div>
 
             </div>
 
@@ -871,3 +590,5 @@
 </body>
 
 </html>
+
+   

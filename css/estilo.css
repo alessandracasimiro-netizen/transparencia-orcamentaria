@@ -1,47 +1,81 @@
 /* ==========================================================
-   GESTÃO, TRANSPARÊNCIA E INFORMAÇÕES
-   IFSP - CAMPUS BRAGANÇA PAULISTA
-========================================================== */
+   PORTAL DE GESTÃO, TRANSPARÊNCIA E INFORMAÇÕES
+   IFSP - Campus Bragança Paulista
+   ========================================================== */
+
+
+/* ===========================
+   VARIÁVEIS
+=========================== */
 
 :root{
 
-    --verde-ifsp:#198754;
-    --verde-escuro:#146c43;
-    --verde-claro:#eaf7ef;
+    --verde:#0b6b3a;
+    --verde-escuro:#07552d;
+    --verde-claro:#138548;
 
-    --cinza:#f5f6f8;
-    --texto:#343a40;
-    --borda:#e4e4e4;
+    --cinza:#f5f7f8;
+    --cinza-claro:#fafafa;
+    --cinza-texto:#5f6368;
 
-    --sombra:0 10px 30px rgba(0,0,0,.08);
+    --texto:#24323d;
+    --branco:#ffffff;
 
-    --radius:16px;
+    --borda:#e4e8eb;
+
+    --sombra-suave:
+        0 10px 30px rgba(0,0,0,.08);
+
+    --sombra-card:
+        0 15px 35px rgba(0,0,0,.06);
+
+    --radius:18px;
+
+    --transicao:.30s ease;
 
 }
 
-*{
 
+/* ===========================
+   RESET
+=========================== */
+
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
 
 }
 
 body{
 
-    font-family:Segoe UI,Arial,sans-serif;
+    font-family:'Inter',sans-serif;
 
-    background:#ffffff;
+    background:var(--cinza);
 
     color:var(--texto);
 
-    line-height:1.7;
+    line-height:1.6;
+
+    overflow-x:hidden;
 
 }
+
+
+/* ===========================
+   LINKS
+=========================== */
 
 a{
 
     text-decoration:none;
+
+    transition:var(--transicao);
 
 }
 
@@ -53,182 +87,79 @@ img{
 
 }
 
-/* ==========================================================
-   BARRA SUPERIOR
-========================================================== */
 
-.barra-superior{
+/* ===========================
+   CONTAINER
+=========================== */
 
-    background:var(--verde-escuro);
+.container{
 
-    color:#fff;
+    max-width:1360px;
 
-    font-size:.90rem;
+    margin:auto;
 
-    padding:8px 0;
+    padding-left:28px;
 
-}
-
-/* ==========================================================
-   CABEÇALHO
-========================================================== */
-
-.cabecalho{
-
-    background:white;
-
-    padding:35px 0;
+    padding-right:28px;
 
 }
 
-.logo-ifsp{
 
-    max-height:90px;
+/* ===========================
+   SEÇÕES
+=========================== */
 
-}
-
-.cabecalho h1{
-
-    font-size:2.2rem;
-
-    font-weight:700;
-
-    color:var(--verde-escuro);
-
-    margin-bottom:6px;
-
-}
-
-.cabecalho h2{
-
-    font-size:1.35rem;
-
-    font-weight:600;
-
-    color:#555;
-
-    margin-bottom:18px;
-
-}
-
-.cabecalho p{
-
-    max-width:700px;
-
-    color:#666;
-
-    margin:0;
-
-}
-
-/* ==========================================================
-   MENU
-========================================================== */
-
-.menu-principal{
-
-    background:var(--verde-ifsp);
-
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-
-}
-
-.menu-principal .nav-link{
-
-    color:white !important;
-
-    font-weight:500;
-
-    padding:16px 18px;
-
-    transition:.25s;
-
-}
-
-.menu-principal .nav-link:hover{
-
-    background:rgba(255,255,255,.12);
-
-}
-
-.menu-principal .nav-link.active{
-
-    font-weight:700;
-
-}
-/* ==========================================================
-   HERO
-========================================================== */
-
-.hero{
+section{
 
     padding:70px 0;
 
-    background:#ffffff;
-
 }
 
-.hero .container{
 
-    background:#ffffff;
+/* ===========================
+   TÍTULOS
+=========================== */
 
-    border-radius:24px;
+h1{
 
-    overflow:hidden;
-
-    box-shadow:var(--sombra);
-
-}
-
-.hero-texto{
-
-    padding:60px;
-
-}
-
-.hero-destaque{
-
-    display:inline-block;
-
-    background:var(--verde-claro);
-
-    color:var(--verde-escuro);
-
-    padding:8px 18px;
-
-    border-radius:30px;
-
-    font-size:.90rem;
-
-    font-weight:600;
-
-    margin-bottom:22px;
-
-}
-
-.hero-texto h2{
-
-    font-size:2.8rem;
+    font-size:2rem;
 
     font-weight:700;
 
-    color:var(--verde-escuro);
-
-    margin-bottom:22px;
+    line-height:1.2;
 
 }
 
-.hero-texto p{
+h2{
 
-    color:#555;
+    font-size:2.1rem;
 
-    margin-bottom:18px;
+    font-weight:700;
 
-    font-size:1.05rem;
+    line-height:1.2;
 
 }
 
-.btn-ifsp{
+h3{
+
+    font-size:1.20rem;
+
+    font-weight:700;
+
+}
+
+p{
+
+    color:var(--cinza-texto);
+
+}
+
+
+/* ===========================
+   BOTÃO PRINCIPAL
+=========================== */
+
+.botao-principal{
 
     display:inline-flex;
 
@@ -236,23 +167,21 @@ img{
 
     gap:10px;
 
-    background:var(--verde-ifsp);
+    padding:15px 28px;
+
+    border-radius:50px;
+
+    background:var(--verde);
 
     color:white;
 
-    padding:15px 28px;
-
-    border-radius:40px;
-
     font-weight:600;
 
-    transition:.3s;
-
-    margin-top:15px;
+    box-shadow:var(--sombra-suave);
 
 }
 
-.btn-ifsp:hover{
+.botao-principal:hover{
 
     background:var(--verde-escuro);
 
@@ -262,405 +191,318 @@ img{
 
 }
 
-.hero-imagem{
 
-    position:relative;
+/* ===========================
+   TÍTULOS DAS SEÇÕES
+=========================== */
 
-    min-height:100%;
+.titulo-secao{
 
-    height:100%;
+    text-align:center;
 
-}
+    max-width:760px;
 
-.hero-imagem img{
-
-    width:100%;
-
-    height:100%;
-
-    min-height:500px;
-
-    object-fit:cover;
+    margin:0 auto 55px;
 
 }
 
-/* Degradê para suavizar a transição da foto */
+.titulo-secao span{
 
-.hero-imagem::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    width:180px;
-
-    height:100%;
-
-    background:linear-gradient(to right,
-        rgba(255,255,255,1),
-        rgba(255,255,255,.85),
-        rgba(255,255,255,0));
-
-    z-index:2;
-
-    pointer-events:none;
-
-}
-
-/* ==========================================================
-   SERVIÇOS
-========================================================== */
-
-.servicos{
-
-    padding:80px 0;
-
-    background:var(--cinza);
-
-}
-
-.servicos h2{
-
-    color:var(--verde-escuro);
-
-    font-size:2rem;
+    color:var(--verde);
 
     font-weight:700;
 
-    margin-bottom:15px;
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    font-size:.82rem;
 
 }
 
-.servicos p{
+.titulo-secao h2{
 
-    color:#666;
+    margin:12px 0 16px;
+
+}
+
+.titulo-secao p{
+
+    font-size:1.05rem;
 
 }
 /* ==========================================================
-   CARDS DE SERVIÇOS
+   BARRA SUPERIOR
 ========================================================== */
 
-.card-servico{
+.barra-superior{
 
-    border:none;
+    background:var(--verde);
 
-    border-radius:20px;
-
-    background:#ffffff;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
-
-    transition:all .30s ease;
-
-    overflow:hidden;
+    height:8px;
 
 }
 
-.card-servico:hover{
 
-    transform:translateY(-8px);
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
 
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
+.cabecalho{
+
+    background:#fff;
+
+    box-shadow:0 1px 8px rgba(0,0,0,.04);
 
 }
 
-.card-servico .card-body{
-
-    padding:35px 30px 25px;
+.cabecalho .container{
 
     display:flex;
 
-    flex-direction:column;
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding-top:22px;
+
+    padding-bottom:22px;
 
 }
 
-.card-servico .icone{
 
-    width:70px;
+/* ==========================================================
+   LOGO
+========================================================== */
 
-    height:70px;
-
-    border-radius:50%;
-
-    background:var(--verde-claro);
-
-    color:var(--verde-ifsp);
+.logo-area{
 
     display:flex;
 
     align-items:center;
 
+    gap:18px;
+
+}
+
+.logo-area img{
+
+    width:70px;
+
+    height:auto;
+
+}
+
+.logo-texto h1{
+
+    font-size:1.55rem;
+
+    margin:0;
+
+}
+
+.logo-texto p{
+
+    margin-top:4px;
+
+    color:var(--cinza-texto);
+
+    font-size:.95rem;
+
+}
+
+
+/* ==========================================================
+   MENU
+========================================================== */
+
+.menu-principal{
+
+    background:#fff;
+
+    border-top:1px solid var(--borda);
+
+    border-bottom:1px solid var(--borda);
+
+}
+
+.menu-principal ul{
+
+    display:flex;
+
     justify-content:center;
 
-    font-size:1.9rem;
+    align-items:center;
 
-    margin-bottom:25px;
+    list-style:none;
 
-}
+    gap:40px;
 
-.card-servico h3{
+    margin:0;
 
-    font-size:1.35rem;
-
-    font-weight:700;
-
-    color:var(--verde-escuro);
-
-    margin-bottom:15px;
+    padding:16px 0;
 
 }
 
-.card-servico p{
+.menu-principal a{
 
-    color:#666;
-
-    flex-grow:1;
-
-    margin-bottom:0;
-
-}
-
-.card-servico .card-footer{
-
-    background:#ffffff;
-
-    border:none;
-
-    padding:0 30px 30px;
-
-}
-
-.card-servico .btn{
-
-    width:100%;
-
-    border-radius:40px;
+    color:var(--texto);
 
     font-weight:600;
 
-    padding:12px;
+    font-size:.95rem;
+
+    position:relative;
 
 }
 
-.card-destaque{
+.menu-principal a::after{
 
-    border:2px solid rgba(25,135,84,.15);
+    content:"";
 
-}
+    position:absolute;
 
-/* ==========================================================
-   BOTÕES
-========================================================== */
+    left:0;
 
-.btn-success{
+    bottom:-8px;
 
-    background:var(--verde-ifsp);
+    width:0;
 
-    border-color:var(--verde-ifsp);
+    height:2px;
 
-}
+    background:var(--verde);
 
-.btn-success:hover{
-
-    background:var(--verde-escuro);
-
-    border-color:var(--verde-escuro);
+    transition:.3s;
 
 }
 
-.btn-outline-success{
+.menu-principal a:hover{
 
-    border:2px solid var(--verde-ifsp);
-
-    color:var(--verde-ifsp);
+    color:var(--verde);
 
 }
 
-.btn-outline-success:hover{
+.menu-principal a:hover::after{
 
-    background:var(--verde-ifsp);
-
-    border-color:var(--verde-ifsp);
-
-    color:#ffffff;
+    width:100%;
 
 }
 /* ==========================================================
-   RODAPÉ
+   HERO
 ========================================================== */
 
-.rodape{
+.hero{
 
-    background:#1f1f1f;
+    background:#ffffff;
 
-    color:#ffffff;
-
-    padding:45px 0;
-
-    margin-top:0;
+    padding:60px 0 80px;
 
 }
 
-.rodape h5{
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1.6fr 1fr;
+
+    gap:42px;
+
+    align-items:center;
+
+}
+
+
+/* ==========================================================
+   FOTO
+========================================================== */
+
+.hero-imagem{
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:var(--sombra-card);
+
+    min-height:430px;
+
+}
+
+.imagem-campus{
+
+    width:100%;
+
+    height:430px;
+
+    background-image:url("../img/campus-banner.jpg");
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    /*
+      Vamos ajustando esta posição depois.
+      A ideia é esconder estacionamento,
+      carros e destacar o prédio.
+    */
+
+    background-position:left 18% top 35%;
+
+}
+
+
+/* ==========================================================
+   CARD HERO
+========================================================== */
+
+.hero-card{
+
+    background:#ffffff;
+
+    border-radius:22px;
+
+    padding:48px;
+
+    box-shadow:var(--sombra-card);
+
+}
+
+.hero-card span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#eef8f2;
+
+    color:var(--verde);
+
+    font-size:.82rem;
 
     font-weight:700;
 
-    margin-bottom:12px;
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+
+    margin-bottom:22px;
 
 }
 
-.rodape p{
+.hero-card h2{
 
-    color:#d7d7d7;
+    margin-bottom:22px;
 
-    margin-bottom:0;
-
-    line-height:1.7;
+    font-size:2.2rem;
 
 }
 
-/* ==========================================================
-   RESPONSIVIDADE
-========================================================== */
+.hero-card p{
 
-@media (max-width:991px){
+    font-size:1.05rem;
 
-    .cabecalho{
-
-        text-align:center;
-
-        padding:30px 0;
-
-    }
-
-    .logo-ifsp{
-
-        margin:0 auto 25px;
-
-        max-height:80px;
-
-    }
-
-    .hero{
-
-        padding:40px 0;
-
-    }
-
-    .hero .container{
-
-        border-radius:18px;
-
-    }
-
-    .hero-texto{
-
-        padding:40px 30px;
-
-    }
-
-    .hero-texto h2{
-
-        font-size:2.2rem;
-
-    }
-
-    .hero-imagem img{
-
-        min-height:320px;
-
-    }
-
-    .hero-imagem::before{
-
-        display:none;
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    .barra-superior{
-
-        font-size:.78rem;
-
-        text-align:center;
-
-    }
-
-    .barra-superior .d-flex{
-
-        flex-direction:column;
-
-        gap:4px;
-
-    }
-
-    .cabecalho h1{
-
-        font-size:1.8rem;
-
-    }
-
-    .cabecalho h2{
-
-        font-size:1.15rem;
-
-    }
-
-    .hero-texto{
-
-        padding:30px 24px;
-
-    }
-
-    .hero-texto h2{
-
-        font-size:1.9rem;
-
-    }
-
-    .hero-texto p{
-
-        font-size:1rem;
-
-    }
-
-    .btn-ifsp{
-
-        width:100%;
-
-        justify-content:center;
-
-    }
-
-    .servicos{
-
-        padding:55px 0;
-
-    }
-
-    .card-servico .card-body{
-
-        padding:28px 24px 20px;
-
-    }
-
-    .card-servico .card-footer{
-
-        padding:0 24px 24px;
-
-    }
-
-}
-
-html{
-
-    scroll-behavior:smooth;
+    margin-bottom:32px;
 
 }

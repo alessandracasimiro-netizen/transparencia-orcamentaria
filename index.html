@@ -2,338 +2,282 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Gestão, Transparência e Informações | IFSP Bragança Paulista</title>
-
     <meta name="description"
         content="Portal de Gestão, Transparência e Informações do Instituto Federal de São Paulo - Campus Bragança Paulista.">
-
     <link rel="icon" href="img/logo-ifsp.png">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    <!-- Fonte -->
+    <!-- Fonte Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/estilo.css">
+    <!-- Estilos Personalizados (Conteúdo do seu CSS refinado) -->
+    <style>
+        /* ===========================
+           VARIÁVEIS
+        =========================== */
+        :root {
+            --verde: #0b6b3a;
+            --verde-escuro: #07552d;
+            --verde-claro: #138548;
+            --preto-footer: #002d1a;
+            --cinza: #f5f7f8;
+            --cinza-claro: #fafafa;
+            --cinza-texto: #5f6368;
+            --texto: #24323d;
+            --branco: #ffffff;
+            --borda: #e4e8eb;
+            --sombra-suave: 0 10px 30px rgba(0,0,0,.08);
+            --sombra-card: 0 15px 35px rgba(0,0,0,.06);
+            --radius: 18px;
+            --transicao: .30s ease;
+        }
 
+        /* ===========================
+           RESET
+        =========================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--cinza); color: var(--texto); line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; transition: var(--transicao); }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 1360px; margin: auto; padding-left: 28px; padding-right: 28px; }
+        section { padding: 70px 0; }
+
+        /* ===========================
+           TÍTULOS E TEXTOS
+        =========================== */
+        h1, h2, h3 { color: var(--preto-footer); font-weight: 700; line-height: 1.2; }
+        h1 { font-size: 2rem; }
+        h2 { font-size: 2.2rem; }
+        h3 { font-size: 1.20rem; }
+        p { color: var(--cinza-texto); }
+
+        /* ===========================
+           BARRA SUPERIOR (Institucional)
+        =========================== */
+        .barra-institucional { background: var(--verde-escuro); color: white; font-size: 0.8rem; padding: 8px 0; }
+        .barra-institucional .container { display: flex; justify-content: space-between; align-items: center; }
+        .barra-links-direita { display: flex; align-items: center; gap: 15px; }
+        .barra-links-direita span { border-right: 1px solid rgba(255,255,255,0.3); padding-right: 15px; }
+        .barra-links-direita a { color: white; opacity: 0.8; font-size: 1rem; }
+        .barra-links-direita a:hover { opacity: 1; }
+
+        /* ===========================
+           CABEÇALHO (Header)
+        =========================== */
+        .cabecalho { background: #fff; box-shadow: 0 1px 8px rgba(0,0,0,.04); padding: 22px 0; }
+        .cabecalho .container { display: flex; align-items: flex-start; gap: 30px; }
+        .logo-area { display: flex; align-items: center; gap: 18px; }
+        .logo-area img { width: 70px; height: auto; }
+        .cabecalho-conteudo { flex: 1; }
+        .cabecalho-conteudo h1 { font-size: 1.8rem; margin-bottom: 5px; }
+        .cabecalho-conteudo .subtitle { margin-bottom: 12px; font-weight: 600; font-size: 1rem; }
+        .cabecalho-conteudo .description { font-size: 0.95rem; line-height: 1.4; color: var(--cinza-texto); max-width: 90%; }
+
+        /* ===========================
+           MENU PRINCIPAL
+        =========================== */
+        .menu-principal { background: var(--verde-escuro); border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .menu-principal ul { display: flex; justify-content: center; align-items: center; list-style: none; gap: 40px; margin: 0; padding: 16px 0; }
+        .menu-principal a { color: white; font-weight: 500; font-size: 0.95rem; position:relative; display: flex; align-items: center; gap: 8px; }
+        .menu-principal a:hover, .menu-principal a.ativo { color: var(--branco); }
+        .menu-principal a::after { content:""; position:absolute; left:0; bottom:-16px; width:0; height:2px; background:var(--branco); transition:.3s; }
+        .menu-principal a:hover::after, .menu-principal a.ativo::after { width:100%; }
+
+        /* ===========================
+           HERO
+        =========================== */
+        .hero { background:var(--branco); padding:60px 0 80px; }
+        .hero-grid { display:grid; grid-template-columns: 1.8fr 1fr; gap: 42px; align-items: stretch; }
+        .hero-imagem { border-radius: 22px; overflow: hidden; box-shadow: var(--sombra-card); background-image: url("img/campus-banner.jpg"); background-size: cover; background-position: center; min-height: 480px; }
+        
+        .hero-card { background: var(--branco); border-radius: 22px; padding: 48px; box-shadow: var(--sombra-card); display: flex; flex-direction: column; justify-content: space-between; }
+        .hero-card h2 { font-size: 2.2rem; margin-bottom: 22px; color: var(--verde-escuro); }
+        .hero-card .hero-divider { width: 40px; height: 3px; background: var(--verde); margin-bottom: 22px; }
+        .hero-card p { font-size: 1.05rem; margin-bottom: 32px; flex-grow: 1; }
+        
+        .botao-principal { display:inline-flex; align-items:center; gap:10px; padding:15px 28px; border-radius:50px; background:var(--preto-footer); color:white; font-weight:600; box-shadow:var(--sombra-suave); }
+        .botao-principal:hover { background:var(--preto-footer); color:white; transform:translateY(-2px); box-shadow: 0 15px 30px rgba(0,0,0,.15); }
+
+        /* ===========================
+           CARDS DE SERVIÇOS
+        =========================== */
+        .secao-servicos { padding-bottom: 90px; }
+        .titulo-secao { text-align:center; max-width:760px; margin:0 auto 55px; }
+        .titulo-secao span { color:var(--verde); font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:.82rem; }
+        .titulo-secao h2 { margin:12px 0 16px; }
+        
+        .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .card-servico { background: var(--branco); border-radius: var(--radius); padding: 32px; box-shadow: var(--sombra-card); display: flex; flex-direction: column; justify-content: space-between; }
+        .icone-card-container { display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%; background: #e8f5e9; color: var(--verde-escuro); font-size: 1.6rem; margin-bottom: 24px; }
+        .card-servico h3 { font-size: 1.25rem; margin-bottom: 16px; }
+        .card-servico p { font-size: 0.95rem; margin-bottom: 24px; flex-grow: 1; }
+        .card-link { display: flex; align-items: center; gap: 8px; color: var(--verde-escuro); font-weight: 600; font-size: 0.95rem; }
+        .card-link i { transition: var(--transicao); }
+        .card-link:hover i { transform: translateX(5px); }
+
+        /* ===========================
+           RODAPÉ (Footer)
+        =========================== */
+        .rodape { background: var(--preto-footer); color: white; padding: 60px 0 30px; font-size: 0.9rem; }
+        .rodape a { color: rgba(255,255,255,0.7); }
+        .rodape a:hover { color: white; }
+        .rodape h4 { color: white; font-weight: 700; font-size: 1.1rem; margin-bottom: 5px; }
+        .rodape .subtitulo-footer { color: rgba(255,255,255,0.7); margin-bottom: 20px; }
+        .rodape-superior { display: grid; grid-template-columns: 1fr auto; gap: 40px; margin-bottom: 50px; }
+        .links-footer-direita { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+        .links-footer-direita a { display: flex; align-items: center; gap: 8px; }
+        
+        .rodape-inferior { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; color: rgba(255,255,255,0.6); }
+    </style>
 </head>
 
 <body>
 
     <!-- Barra institucional -->
-
-    <div class="barra-superior">
-
+    <div class="barra-institucional">
         <div class="container">
-
-            <span>
-                Instituto Federal de Educação, Ciência e Tecnologia de São Paulo
-            </span>
-
+            <span>Portal de Gestão, Transparência e Informações</span>
+            <div class="barra-links-direita">
+                <span>IFSP · Campus Bragança Paulista</span>
+                <a href="#" title="Acessibilidade: A-"><i class="bi bi-dash"></i></a>
+                <a href="#" title="Acessibilidade: A"><i class="bi bi-fonts"></i></a>
+                <a href="#" title="Acessibilidade: A+"><i class="bi bi-plus"></i></a>
+                <a href="#" title="Portal do IFSP"><i class="bi bi-info-circle"></i></a>
+            </div>
         </div>
-
     </div>
 
     <!-- Cabeçalho -->
-
     <header class="cabecalho">
-
         <div class="container">
-
-            <div class="cabecalho-conteudo">
-
-                <div class="logo-area">
-
-                    <img src="img/logo-ifsp.png" alt="IFSP">
-
-                    <div>
-
-                        <h1>Gestão, Transparência e Informações</h1>
-
-                        <p>Campus Bragança Paulista</p>
-
-                    </div>
-
-                </div>
-
+            <div class="logo-area">
+                <img src="img/logo-ifsp.png" alt="IFSP Logo">
             </div>
-
+            <div class="cabecalho-conteudo">
+                <h1>Gestão, Transparência e Informações</h1>
+                <p class="subtitle">Campus Bragança Paulista</p>
+                <p class="description">
+                    Facilitando o acesso à informação, promovendo a transparência e fortalecendo o diálogo com a comunidade.
+                </p>
+            </div>
         </div>
-
     </header>
 
     <!-- Navegação -->
-
     <nav class="menu-principal">
-
         <div class="container">
-
             <ul>
-
-                <li>
-                    <a class="ativo" href="#">
-                        <i class="bi bi-house-door"></i>
-                        Início
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Campus
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Perguntas Frequentes
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Panorama Orçamentário
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Aquisições
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Gestão
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Fale com a Direção
-                    </a>
-                </li>
-
+                <li><a class="ativo" href="#"><i class="bi bi-house-door"></i> Início</a></li>
+                <li><a href="#"><i class="bi bi-building"></i> Como funciona o Campus</a></li>
+                <li><a href="#"><i class="bi bi-question-circle"></i> Perguntas Frequentes</a></li>
+                <li><a href="#"><i class="bi bi-bar-chart-line"></i> Panorama Orçamentário</a></li>
+                <li><a href="#"><i class="bi bi-clipboard-check"></i> Planejamento de Aquisições</a></li>
+                <li><a href="#"><i class="bi bi-chat-dots"></i> Fale com a Gestão</a></li>
             </ul>
-
         </div>
-
     </nav>
 
-    <!-- HERO -->
-
+    <!-- HERO Section -->
     <section class="hero">
-
         <div class="container">
-
             <div class="hero-grid">
-                                <!-- Foto do Campus -->
-
-                <div class="hero-imagem">
-
-                    <div class="imagem-campus"></div>
-
-                </div>
+                <!-- Foto do Campus -->
+                <div class="hero-imagem"></div>
 
                 <!-- Card de Boas-vindas -->
-
                 <div class="hero-card">
-
-                    <span class="hero-tag">
-                        Portal Institucional
-                    </span>
-
-                    <h2>
-                        Bem-vindo ao Portal de Gestão, Transparência e Informações
-                    </h2>
-
+                    <h2>Bem-vindo ao Portal</h2>
+                    <div class="hero-divider"></div>
                     <p>
-                        Este portal reúne informações sobre a gestão do Campus Bragança Paulista,
-                        promovendo transparência, comunicação e acesso facilitado às principais
-                        informações institucionais da comunidade acadêmica.
+                        Este portal reúne informações institucionais, orientações sobre os principais serviços do campus,
+                        dados de transparência e um canal permanente de diálogo entre a comunidade acadêmica e a Gestão.
                     </p>
-
                     <a href="#" class="botao-principal">
-
-                        Conheça o Portal
-
                         <i class="bi bi-arrow-right"></i>
-
+                        Acesse os principais serviços
                     </a>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-    <!-- Serviços -->
-
+    <!-- Seção de Acesso Rápido -->
     <section class="secao-servicos">
-
         <div class="container">
-
             <div class="titulo-secao">
-
                 <span>Acesso Rápido</span>
-
-                <h2>
-                    Acesse os principais serviços e informações
-                </h2>
-
-                <p>
-                    Navegue pelos principais conteúdos do portal de forma rápida e organizada.
-                </p>
-
-            </div>
-
-            <div class="row g-4">
-                                   <!-- Serviços -->
-
-    <section class="secao-servicos">
-
-        <div class="container">
-
-            <div class="titulo-secao">
-
-                <span>Acesso Rápido</span>
-
                 <h2>Acesse os principais serviços e informações</h2>
-
-                <p>
-                    Navegue pelos principais conteúdos do portal de forma rápida e organizada.
-                </p>
-
             </div>
 
             <div class="cards-grid">
-
                 <!-- Card 1 -->
-
                 <article class="card-servico">
-
-                    <div class="icone-card">
-                        <i class="bi bi-building"></i>
-                    </div>
-
+                    <div class="icone-card-container"><i class="bi bi-building"></i></div>
                     <h3>Como funciona o Campus</h3>
-
-                    <p>
-                        Conheça os principais serviços, setores responsáveis,
-                        documentos, procedimentos e formas de atendimento.
-                    </p>
-
-                    <a href="#">
-                        Acessar
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-
+                    <p>Conheça os principais serviços, setores responsáveis, documentos, procedimentos e formas de atendimento.</p>
+                    <a href="#" class="card-link">Acessar <i class="bi bi-arrow-right"></i></a>
                 </article>
 
                 <!-- Card 2 -->
-
                 <article class="card-servico">
-
-                    <div class="icone-card">
-                        <i class="bi bi-question-circle"></i>
-                    </div>
-
+                    <div class="icone-card-container"><i class="bi bi-question-circle"></i></div>
                     <h3>Perguntas Frequentes</h3>
-
-                    <p>
-                        Encontre respostas para as dúvidas mais comuns sobre a vida acadêmica,
-                        os serviços e o funcionamento do campus.
-                    </p>
-
-                    <a href="#">
-                        Acessar
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-
+                    <p>Encontre respostas para as dúvidas mais comuns sobre a vida acadêmica, os serviços e o funcionamento do campus.</p>
+                    <a href="#" class="card-link">Acessar <i class="bi bi-arrow-right"></i></a>
                 </article>
 
                 <!-- Card 3 -->
-
                 <article class="card-servico">
-
-                    <div class="icone-card">
-                        <i class="bi bi-bar-chart-line"></i>
-                    </div>
-
+                    <div class="icone-card-container"><i class="bi bi-bar-chart-line"></i></div>
                     <h3>Panorama Orçamentário</h3>
-
-                    <p>
-                        Acompanhe a execução orçamentária,
-                        investimentos e a aplicação dos recursos públicos do campus.
-                    </p>
-
-                    <a href="#">
-                        Acessar
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-
+                    <p>Acompanhe a execução orçamentária, investimentos e a aplicação dos recursos públicos do campus.</p>
+                    <a href="#" class="card-link">Acessar <i class="bi bi-arrow-right"></i></a>
                 </article>
 
                 <!-- Card 4 -->
-
                 <article class="card-servico">
-
-                    <div class="icone-card">
-                        <i class="bi bi-clipboard-check"></i>
-                    </div>
-
+                    <div class="icone-card-container"><i class="bi bi-clipboard-check"></i></div>
                     <h3>Planejamento de Aquisições</h3>
-
-                    <p>
-                        Consulte os planejamentos de compras,
-                        investimentos e contratações previstos para o campus.
-                    </p>
-
-                    <a href="#">
-                        Acessar
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-
+                    <p>Consulte os planejamentos de compras, investimentos e contratações previstos para o campus.</p>
+                    <a href="#" class="card-link">Acessar <i class="bi bi-arrow-right"></i></a>
                 </article>
-
-                <!-- Card 5 -->
-
-                <article class="card-servico">
-
-                    <div class="icone-card">
-                        <i class="bi bi-chat-dots"></i>
-                    </div>
-
-                    <h3>Fale com a Gestão</h3>
-
-                    <p>
-                        Encaminhe sugestões, dúvidas,
-                        elogios e oportunidades de melhoria diretamente à Gestão do Campus.
-                    </p>
-
-                    <a href="#">
-                        Acessar
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-
-                </article>
-
             </div>
-
         </div>
-
     </section>
+
+    <!-- Rodapé (Footer) -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-superior">
+                <div>
+                    <h4>Gestão, Transparência e Informações</h4>
+                    <p class="subtitulo-footer">IFSP – Campus Bragança Paulista</p>
+                    <p>Promovendo transparência, participação e diálogo.</p>
+                </div>
+                <div class="links-footer-direita">
+                    <a href="mailto:contato@exemplo.com"><i class="bi bi-envelope"></i> Contato</a>
+                    <a href="#"><i class="bi bi-map"></i> Mapa do site</a>
+                </div>
+            </div>
+            <div class="rodape-inferior">
+                &copy; 2025 IFSP – Campus Bragança Paulista
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.min.js"></script>
+</body>
+
+</html>

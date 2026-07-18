@@ -1,0 +1,542 @@
+/* ==========================================================
+   PORTAL GESTÃO, TRANSPARÊNCIA E INFORMAÇÕES
+   IFSP - Campus Bragança Paulista
+========================================================== */
+
+:root{
+
+    --verde-ifsp:#198754;
+    --verde-escuro:#146c43;
+    --cinza-claro:#f8f9fa;
+    --cinza:#6c757d;
+    --texto:#343a40;
+    --branco:#ffffff;
+    --borda:#dee2e6;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f6f7;
+    color:var(--texto);
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+.topo-site{
+
+    background:var(--branco);
+    border-bottom:5px solid var(--verde-ifsp);
+    padding:35px 0;
+
+}
+
+.logo-ifsp{
+
+    max-width:130px;
+    width:100%;
+    height:auto;
+
+}
+
+.instituicao{
+
+    font-size:.95rem;
+    color:var(--cinza);
+    margin-bottom:6px;
+
+}
+
+.topo-site h1{
+
+    color:var(--verde-ifsp);
+    font-size:2.1rem;
+    font-weight:700;
+    margin-bottom:8px;
+
+}
+
+.topo-site h2{
+
+    font-size:1.35rem;
+    margin-bottom:12px;
+
+}
+
+.slogan{
+
+    color:var(--cinza);
+    margin-bottom:0;
+
+}
+
+/* ==========================================================
+   MENU
+========================================================== */
+
+.menu-principal{
+
+    background:var(--verde-ifsp);
+
+}
+
+.menu-principal .nav-link{
+
+    color:white !important;
+    padding:14px 18px;
+    font-weight:500;
+
+}
+
+.menu-principal .nav-link:hover{
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.menu-principal .nav-link.active{
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   BANNER
+========================================================== */
+
+.banner{
+
+    background:white;
+    padding:70px 0;
+    border-bottom:1px solid var(--borda);
+
+}
+
+.banner h2{
+
+    color:var(--verde-ifsp);
+    font-size:2rem;
+    margin-bottom:25px;
+
+}
+
+.banner i{
+
+    color:var(--verde-ifsp);
+
+}
+
+/* ==========================================================
+   SEÇÕES
+========================================================== */
+
+.secao{
+
+    padding:70px 0;
+
+}
+
+.titulo-secao{
+
+    color:var(--verde-ifsp);
+    text-align:center;
+    margin-bottom:45px;
+    font-size:2rem;
+
+}
+
+.caixa-introducao{
+
+    background:white;
+    border-left:6px solid var(--verde-ifsp);
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.caixa-introducao h2{
+
+    color:var(--verde-ifsp);
+    margin-bottom:20px;
+
+}
+/* ==========================================================
+   FLUXOGRAMA
+========================================================== */
+
+.secao-fluxo{
+
+    background:#eef7f1;
+
+}
+
+.fluxograma{
+
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+
+}
+
+.caixa-fluxo{
+
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    margin:20px auto;
+    border:1px solid var(--borda);
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.caixa-fluxo i{
+
+    font-size:2.5rem;
+    color:var(--verde-ifsp);
+    margin-bottom:15px;
+
+}
+
+.caixa-fluxo h3{
+
+    font-size:1.3rem;
+    margin-bottom:15px;
+
+}
+
+.caixa-fluxo ul{
+
+    margin-top:20px;
+    text-align:left;
+    display:inline-block;
+
+}
+
+.seta{
+
+    font-size:2.4rem;
+    color:var(--verde-ifsp);
+    margin:10px 0;
+
+}
+
+.opcoes-fluxo{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-top:25px;
+
+}
+
+.opcao{
+
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    width:240px;
+    border:1px solid var(--borda);
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.opcao i{
+
+    font-size:2.2rem;
+    margin-bottom:12px;
+
+}
+
+.sucesso i{
+
+    color:var(--verde-ifsp);
+
+}
+
+.destaque{
+
+    border:2px solid var(--verde-ifsp);
+
+}
+
+.destaque i{
+
+    color:var(--verde-ifsp);
+
+}
+
+.seta-lateral{
+
+    width:auto;
+    border:none;
+    background:none;
+    box-shadow:none;
+    padding:0;
+
+}
+
+.seta-lateral i{
+
+    font-size:2rem;
+    color:var(--verde-ifsp);
+
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.card-portal{
+
+    border:none;
+    border-radius:12px;
+    transition:.25s;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+.card-portal:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card-portal .card-body{
+
+    padding:35px;
+
+}
+
+.icone-card{
+
+    font-size:3rem;
+    color:var(--verde-ifsp);
+    margin-bottom:20px;
+
+}
+
+.card-portal h3{
+
+    color:var(--verde-ifsp);
+    font-size:1.45rem;
+    margin-bottom:18px;
+
+}
+
+.card-portal p{
+
+    color:#555;
+
+}
+
+.btn-success{
+
+    background:var(--verde-ifsp);
+    border-color:var(--verde-ifsp);
+
+}
+
+.btn-success:hover{
+
+    background:var(--verde-escuro);
+    border-color:var(--verde-escuro);
+
+}
+
+.destaque-gestao{
+
+    border:2px solid var(--verde-ifsp);
+
+}
+/* ==========================================================
+   RODAPÉ
+========================================================== */
+
+.rodape{
+
+    background:#212529;
+    color:white;
+    padding:60px 0 30px;
+
+}
+
+.rodape h4{
+
+    margin-bottom:20px;
+    color:white;
+
+}
+
+.lista-rodape{
+
+    list-style:none;
+    padding-left:0;
+
+}
+
+.lista-rodape li{
+
+    margin-bottom:10px;
+
+}
+
+.lista-rodape a{
+
+    color:#ffffff;
+    text-decoration:none;
+
+}
+
+.lista-rodape a:hover{
+
+    text-decoration:underline;
+
+}
+
+.rodape hr{
+
+    border-color:rgba(255,255,255,.20);
+    margin:30px 0;
+
+}
+
+.rodape small{
+
+    color:#ced4da;
+
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media (max-width:991px){
+
+    .topo-site{
+
+        text-align:center;
+
+    }
+
+    .logo-ifsp{
+
+        margin-bottom:25px;
+
+    }
+
+    .banner{
+
+        text-align:center;
+        padding:50px 0;
+
+    }
+
+    .banner i{
+
+        margin-top:30px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .topo-site h1{
+
+        font-size:1.8rem;
+
+    }
+
+    .topo-site h2{
+
+        font-size:1.2rem;
+
+    }
+
+    .titulo-secao{
+
+        font-size:1.6rem;
+
+    }
+
+    .caixa-introducao{
+
+        padding:25px;
+
+    }
+
+    .caixa-fluxo{
+
+        padding:20px;
+
+    }
+
+    .opcoes-fluxo{
+
+        flex-direction:column;
+
+    }
+
+    .seta-lateral{
+
+        transform:rotate(90deg);
+
+    }
+
+    .card-portal .card-body{
+
+        padding:25px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .banner h2{
+
+        font-size:1.6rem;
+
+    }
+
+    .banner{
+
+        padding:40px 0;
+
+    }
+
+    .secao{
+
+        padding:50px 0;
+
+    }
+
+    .caixa-fluxo{
+
+        width:100%;
+
+    }
+
+    .opcao{
+
+        width:100%;
+
+    }
+
+}

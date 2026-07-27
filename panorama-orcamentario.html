@@ -101,7 +101,7 @@
         .bloco-conteudo { background: var(--branco); border-radius: 12px; padding: 40px; box-shadow: var(--sombra-card); margin-bottom: 30px; border: 1px solid rgba(0,0,0,0.02); }
         
         /* Bloco de Objetivo com Destaque Lateral Verde */
-        .objetivo-box { border-left: 5px solid var(--verde); background: #fafd967c; background-color: rgba(11, 107, 58, 0.04); }
+        .objetivo-box { border-left: 5px solid var(--verde); background: rgba(11, 107, 58, 0.04); }
         .objetivo-box h3 { color: var(--verde-escuro); margin-bottom: 12px; font-weight: 700; }
 
         /* Grid de Cards Financeiros */
@@ -109,7 +109,7 @@
         .card-financeiro { background: var(--branco); border: 1px solid var(--borda); border-radius: 10px; padding: 25px 20px; transition: var(--transicao); }
         .card-financeiro:hover { transform: translateY(-2px); box-shadow: var(--sombra-card); }
         .card-financeiro h3 { font-size: 1rem; color: var(--cinza-texto); font-weight: 600; margin-bottom: 15px; }
-        .card-financeiro .valor { font-size: 1.8rem; font-weight: 700; color: var(--preto-footer); margin-bottom: 8px; }
+        .card-financeiro .valor { font-size: 1.7rem; font-weight: 700; color: var(--preto-footer); margin-bottom: 8px; }
         .card-financeiro .descricao-pequena { font-size: 0.88rem; color: var(--cinza-texto); line-height: 1.4; }
         
         /* Card Destaque (Amarelo/Alerta) */
@@ -119,16 +119,16 @@
 
         /* Barra de Progresso Personalizada */
         .barra-execucao-container { background: #e9ecef; height: 32px; border-radius: 50px; overflow: hidden; margin: 20px 0; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); }
-        .barra-execucao-preenchimento { width: 72%; height: 100%; background: linear-gradient(90deg, var(--verde), var(--verde-claro)); color: #fff; text-align: center; line-height: 32px; font-weight: 700; font-size: 1rem; box-shadow: 0 2px 4px rgba(11,107,58,0.2); }
+        .barra-execucao-preenchimento { width: 54%; height: 100%; background: linear-gradient(90deg, var(--verde), var(--verde-claro)); color: #fff; text-align: center; line-height: 32px; font-weight: 700; font-size: 1rem; box-shadow: 0 2px 4px rgba(11,107,58,0.2); }
 
         /* Tabelas Personalizadas */
         .tabela-customizada { width: 100%; margin-top: 15px; }
         .tabela-customizada th { background-color: #edf7ed; color: var(--verde-escuro); font-weight: 700; border-bottom: 2px solid #c3e6cb; padding: 14px 18px; }
         .tabela-customizada td { padding: 14px 18px; border-bottom: 1px solid var(--borda); color: var(--texto); font-size: 0.98rem; }
-        .tabela-customizada tr:hover td { background-color: #fafd9633; background-color: rgba(11, 107, 58, 0.01); }
+        .tabela-customizada tr:hover td { background-color: rgba(11, 107, 58, 0.01); }
 
         /* ===========================
-           MENU LATERAL (Âncoras Firas)
+           MENU LATERAL (Âncoras Fixas)
         =========================== */
         .menu-lateral-container { position: sticky; top: 30px; height: fit-content; }
         .menu-lateral { background: var(--branco); border-radius: 12px; padding: 25px; box-shadow: var(--sombra-card); border: 1px solid rgba(0,0,0,0.02); }
@@ -153,7 +153,7 @@
         /* Responsive Layout */
         @media(max-width: 992px) {
             .conteudo-grid { grid-template-columns: 1fr; padding-top: 30px; }
-            .menu-lateral-container { display: none; } /* Oculta menu lateral em telas pequenas já que temos o menu principal */
+            .menu-lateral-container { display: none; }
         }
         @media(max-width: 768px) {
             .menu-principal ul { flex-direction: column; }
@@ -232,25 +232,25 @@
                     <div class="dashboard-grid">
                         <div class="card-financeiro">
                             <h3>Orçamento do Exercício</h3>
-                            <div class="valor">R$ 3.030.000</div>
-                            <div class="descricao-pequena">Total de recursos autorizados para utilização no exercício financeiro.</div>
+                            <div class="valor">R$ 2.943.664,32</div>
+                            <div class="descricao-pequena">Total de recursos autorizados para utilização no exercício financeiro de 2026.</div>
                         </div>
 
                         <div class="card-financeiro">
                             <h3>Recursos Empenhados</h3>
-                            <div class="valor">R$ 2.180.000</div>
-                            <div class="descricao-pequena"><span class="badge bg-success">72%</span> do orçamento já comprometido com despesas autorizadas.</div>
+                            <div class="valor">R$ 1.580.200,94</div>
+                            <div class="descricao-pequena"><span class="badge bg-success">54%</span> do orçamento já comprometido com despesas autorizadas até junho/2026.</div>
                         </div>
 
                         <div class="card-financeiro destaque">
                             <h3>Recursos Previstos para Empenho</h3>
-                            <div class="valor">R$ 850.000</div>
-                            <div class="descricao-pequena">Valores destinados às despesas planejadas para o decorrer do exercício e que ainda não foram objeto de empenho.</div>
+                            <div class="valor">R$ 1.363.463,38</div>
+                            <div class="descricao-pequena">Montante comprometido para atender às despesas planejadas para o decorrer do exercício.</div>
                         </div>
 
                         <div class="card-financeiro">
                             <h3>Última Atualização</h3>
-                            <div class="valor" style="font-size: 1.5rem; padding-top: 5px; margin-bottom: 13px;">Julho / 2026</div>
+                            <div class="valor" style="font-size: 1.5rem; padding-top: 5px; margin-bottom: 13px;">Junho / 2026</div>
                             <div class="descricao-pequena">Dados consolidados da transparência ativa do campus.</div>
                         </div>
                     </div>
@@ -260,10 +260,10 @@
                 <section id="execucao" class="bloco-conteudo">
                     <h2>Execução Orçamentária</h2>
                     <div class="barra-execucao-container">
-                        <div class="barra-execucao-preenchimento">72%</div>
+                        <div class="barra-execucao-preenchimento">54%</div>
                     </div>
                     <p class="descricao-pequena text-muted mt-2 mb-4">
-                        O percentual de execução corresponde ao montante já empenhado em relação ao orçamento autorizado para o exercício.
+                        O percentual de execução corresponde ao montante já empenhado em relação ao orçamento autorizado para o exercício (54% do orçamento previsto para 2026 já empenhado até o mês de junho).
                     </p>
                     
                     <h3 class="h5 font-weight-bold text-dark mt-4 mb-2">Como interpretar a execução orçamentária?</h3>
@@ -271,7 +271,7 @@
                         O principal indicador da execução orçamentária do campus é o <strong>valor empenhado</strong>, pois representa os recursos já comprometidos para atender às despesas autorizadas.
                     </p>
                     <p class="mb-3">
-                        Os <strong>Recursos previstos para empenho</strong> <strong>não representam recursos excedentes ou livres</strong>. Eles poderão ser utilizados ao longo do exercício para atender processos licitatórios, contratos continuados, aquisições previstas no Plano Anual de Contratações, investimentos, manutenções e demais necessidades institucionais.
+                        Os <strong>Recursos previstos para empenho</strong> (R$ 1.363.463,38) <strong>não representam recursos excedentes ou livres</strong>. Eles poderão ser utilizados ao longo do exercício para atender processos licitatórios, contratos continuados, aquisições previstas no Plano Anual de Contratações, investimentos, manutenções e demais necessidades institucionais.
                     </p>
                     <p class="m-0">
                         A execução do orçamento ocorre de forma gradual, conforme o planejamento institucional e a disponibilidade orçamentária.
@@ -281,35 +281,31 @@
                 <!-- Seção Aplicação dos Recursos -->
                 <section id="aplicacao" class="bloco-conteudo">
                     <h2>Aplicação dos Recursos</h2>
-                    <p class="text-muted mb-3">Principais áreas de investimento e destinação de valores do campus:</p>
+                    <p class="text-muted mb-3">Principais áreas de destinação e investimentos dos recursos do campus:</p>
                     
                     <table class="table tabela-customizada align-middle">
                         <thead>
                             <tr>
-                                <th style="width: 30%;">Área</th>
-                                <th>Exemplo Prático de Aplicação</th>
+                                <th style="width: 30%;">Categoria</th>
+                                <th>Situação / Destinação</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Infraestrutura</strong></td>
-                                <td>Substituição da caixa d'água</td>
-                            </tr>
-                            <tr>
                                 <td><strong>Contratos continuados</strong></td>
-                                <td>Limpeza, vigilância, energia, internet e manutenção predial</td>
+                                <td>Limpeza, vigilância, energia, água, telefonia, alimentação (TRYX) e manutenção predial (86% do recurso destinado).</td>
                             </tr>
                             <tr>
-                                <td><strong>Tecnologia</strong></td>
-                                <td>Aquisição de computadores e equipamentos</td>
+                                <td><strong>Infraestrutura</strong></td>
+                                <td>Mobiliário Biblioteca, Carteiras, Computadores</td>
                             </tr>
                             <tr>
                                 <td><strong>Ensino</strong></td>
-                                <td>Laboratórios e apoio às atividades acadêmicas</td>
+                                <td>Bolsas, Equipamentos para laboratórios (R$ 100.000,00) e atividades acadêmicas.</td>
                             </tr>
                             <tr>
-                                <td><strong>Assistência Estudantil</strong></td>
-                                <td>Auxílios e ações de permanência e êxito</td>
+                                <td><strong>Assistência estudantil</strong></td>
+                                <td>Auxílios e ações de permanência</td>
                             </tr>
                         </tbody>
                     </table>
@@ -395,7 +391,7 @@
             </div>
             <div class="rodape-inferior">
                 <span>&copy; 2026 IFSP – Campus Bragança Paulista</span>
-                <span>Última atualização: Julho de 2026</span>
+                <span>Última atualização: Junho de 2026</span>
             </div>
         </div>
     </footer>
@@ -405,3 +401,6 @@
 </body>
 
 </html>
+  
+       
+        
